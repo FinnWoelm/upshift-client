@@ -1,22 +1,33 @@
-import { test } from 'qunit';
-import moduleForAcceptance from 'upshift/tests/helpers/module-for-acceptance';
+import { describe, it, beforeEach, afterEach } from 'mocha';
+import { expect } from 'chai';
+import startApp from 'upshift/tests/helpers/start-app';
+import destroyApp from 'upshift/tests/helpers/destroy-app';
 
-moduleForAcceptance('Acceptance | index');
+describe('Acceptance | index', function() {
+  let application;
 
-test('visiting /', function(assert) {
-  visit('/');
-
-  andThen(function() {
-    assert.equal(currentURL(), '/');
+  beforeEach(function() {
+    application = startApp();
   });
-});
 
-test('should tell the world that we are working on something big.', function (assert) {
-  visit('/');
-  andThen(function() {
-    assert.notEqual(
-      find('h1').text().toLowerCase().indexOf("we are working on something big"),
-      -1,
-      'contains our message for the world');
+  afterEach(function() {
+    destroyApp(application);
+  });
+
+
+  it('can visit /', function() {
+    visit('/');
+
+    andThen(() => {
+      expect(currentURL()).to.equal('/');
+    });
+  });
+
+  it('tells the world that we are working on something big', function() {
+    visit('/');
+    andThen(() => {
+      expect(find("h1").text().toLowerCase()).to.
+        include("we are working on something big");
+    });
   });
 });
