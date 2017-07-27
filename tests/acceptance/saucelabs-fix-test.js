@@ -25,6 +25,6 @@ describe('Sauce Labs Fix', function() {
   it('should wait a second to make sure Sauce Labs registers the result', function(done) {
     setTimeout(function(){
       done();
-    }, 1000);
+    }, 10000);
   });
 });
