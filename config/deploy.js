@@ -1,4 +1,4 @@
-/* jshint node: true */
+/*global process module:true*/
 
 module.exports = function(deployTarget) {
   var ENV = {
