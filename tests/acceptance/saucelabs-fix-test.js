@@ -1,4 +1,4 @@
-import { describe, it, beforeEach, afterEach, done } from 'mocha';
+import { describe, it, beforeEach, afterEach } from 'mocha';
 import startApp from 'upshift/tests/helpers/start-app';
 import destroyApp from 'upshift/tests/helpers/destroy-app';
 
@@ -22,7 +22,7 @@ describe('Sauce Labs Fix', function() {
    * We can probably remove this once we have some more tests.
    **/
 
-  it('should wait a second to make sure Sauce Labs registers the result', function() {
+  it('should wait a second to make sure Sauce Labs registers the result', function(done) {
     setTimeout(function(){
       done();
     }, 1000);
