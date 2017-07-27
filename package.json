@@ -1,8 +1,8 @@
 {
-  "name": "upshift",
-  "version": "0.0.0",
-  "description": "Small description for upshift goes here",
-  "license": "MIT",
+  "name": "Upshift Client",
+  "version": "0.1",
+  "description": "Community. Collaboration. Democracy.",
+  "license": "GPL-3.0",
   "author": "",
   "directories": {
     "doc": "doc",
