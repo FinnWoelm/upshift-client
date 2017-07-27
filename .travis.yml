@@ -12,6 +12,7 @@ cache:
 before_install:
   - npm config set spin false
   - npm install -g phantomjs-prebuilt
+  - npm install -g codecov
   - phantomjs --version
 
 install:
@@ -19,3 +20,12 @@ install:
 
 script:
   - npm test
+  - codecov # push coverage report to codecov
+
+branches:
+  only:
+  - master
+  - development
+
+env:
+  - COVERAGE=true # generate coverage report with ember-cli-code-coverage
