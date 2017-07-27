@@ -23,6 +23,7 @@ describe('Sauce Labs Fix', function() {
    **/
 
   it('should wait a second to make sure Sauce Labs registers the result', function(done) {
+    this.timeout(15000);
     setTimeout(function(){
       done();
     }, 10000);
