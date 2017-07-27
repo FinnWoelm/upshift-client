@@ -9,5 +9,13 @@
     "browser": true
   },
   "rules": {
-  }
+  },
+  "overrides": [
+    {
+      "files": [ "tests/**/*" ],
+      "env": {
+        "embertest": true
+      }
+    }
+  ]
 }
