@@ -22,6 +22,12 @@ script:
   - ember test --test-port 7000
   - codecov # push coverage report to codecov
 
+before_script:
+  - ember sauce:connect
+
+after_script:
+  - ember sauce:disconnect
+
 branches:
   only:
   - master
@@ -29,9 +35,4 @@ branches:
 
 env:
   - COVERAGE=true # generate coverage report with ember-cli-code-coverage
-
-addons:
-  sauce_connect:
-    username: "fwoelm"
-  jwt:
-    secure: "ga7QdjuhBS522Lquyxs9FUEfaxffK462askOqqyOQvB/Tq+34Txn6rt20znOVvDk8379rU/DPBLBjs6ZWugw8pxGd7fnf6tVn9nIYrVBCK0EmGpEAxaFm1b6xDevWXbnJ1xXXb3DhtfSjY/eQjNhah+IVh8r0ew2QPZa/TapbRDzaCNvHEIfjr5ujHkIvFL1HtWAN+2arQdd96/q0WJArqyJfCEIgX1wY39m1bzqxfOoOdZfzMA/PzvB+UmE7obQ6IsHS+0KUgdm4vofRFl5Flcy/axa5vNPck95/d64VxXFkoT1Kiy+4f1rwoKwj6M/uROCLrDeV652bDHdD/8eDQYc9qAYcmiGDkwuIfJCJGqC0PT4Ze965vBDSi1qmNUSTeKcoWKsZcUAKzS985epe79iJT2KKhIUTwjeMa9/zfjUEVC9gSsR7cCCoDWMUWCMjMAOg0TeQRt2UVMU6ouhFHxnvp/8NZI2XU533xNuwKL9X0hvDEYD8MesR2PKPu8X08BRFq/CHzDFrApiB8hbJp0OOJ9mhNWOjjf0yt3IW7aoPfgwTZVMqiNfWZEBK8veeAQ1afI4da7+o33JqtFLKlzYhnDsFEiYUDmCTLHaoL3HlvKqnyF73BWJXbXtAIqLed+SFlPenMVzAGjfgl1GCrGHeYdt52/ebW6Z7iFU+f8="
+  - SAUCE_USERNAME=fwoelm
