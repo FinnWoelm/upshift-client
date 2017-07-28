@@ -19,7 +19,7 @@ install:
   - npm install
 
 script:
-  - ember test --test-port 7000
+  - ember test --host test.upshift.network
   - codecov # push coverage report to codecov
 
 before_script:
@@ -36,3 +36,7 @@ branches:
 env:
   - COVERAGE=true # generate coverage report with ember-cli-code-coverage
   - SAUCE_USERNAME=fwoelm
+
+addons:
+  hosts:
+    - test.upshift.network

@@ -1,6 +1,7 @@
 /* eslint-env node */
 module.exports = {
   test_page: 'tests/index.html?hidepassed',
+  framework: 'mocha',
   disable_watching: true,
   parallel: 6,
 
